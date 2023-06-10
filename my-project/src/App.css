@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrap-content {
+  max-width: 1200px;
+  width: calc(100% - 20px);
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.youtube-list {
+  display: grid;
+  grid-template-areas: 'h1 h2 h3';
+  row-gap: 10px;
+  column-gap: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.youtube-item:first-child {
+  grid-area: h1;
+}
+.youtube-item:nth-child(2) {
+  grid-area: h2;
+}
+.youtube-item:last-child {
+  grid-area: h3;
 }
 
-.App-link {
-  color: #61dafb;
+.youtube-image {
+  height: 200px;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.youtube-image img:hover {
+  transform: scale(1.1);
+}
+
+.youtube-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
 }
