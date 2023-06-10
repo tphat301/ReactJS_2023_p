@@ -2,17 +2,18 @@ import logo from './logo.svg'
 import './App.css'
 
 function App() {
+  const infomation = {
+    fullname: 'Đỗ Lâm Thành Phát',
+    age: 24,
+    email: 'dolamthanhphat@gmail.com'
+  }
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
-          Learn React
-        </a>
-      </header>
+      <h3 className='fullname'>Họ và tên: {infomation['fullname']}</h3>
+      <div className='age'>
+        <strong>Tuổi: </strong>
+        {infomation.age}
+      </div>
     </div>
   )
 }
