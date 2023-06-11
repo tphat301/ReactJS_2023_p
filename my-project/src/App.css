@@ -45,3 +45,7 @@
   user-select: none;
   transition: all 0.2s ease-in-out;
 }
+.youtube-item.active .youtube-title {
+  color: rebeccapurple;
+  cursor: pointer;
+}
