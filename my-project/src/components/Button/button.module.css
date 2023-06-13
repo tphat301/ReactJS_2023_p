@@ -1,0 +1,24 @@
+.btn {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.btnPrimary {
+  color: #fff;
+  background-color: #2879ff;
+  outline: none;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.btnSecondary {
+  outline: none;
+  color: #2879ff;
+  border: 1px solid #2879ff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  margin: 10px;
+}

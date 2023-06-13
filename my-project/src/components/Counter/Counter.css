@@ -1,0 +1,28 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.counter-number {
+  font-size: 40px;
+  text-align: center;
+}
+.counter-control {
+  margin-top: 20px;
+}
+.counter-prev,
+.counter-next {
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  margin: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.counter-prev:hover,
+.counter-next:hover {
+  color: #f00;
+  border: 1px solid #f00;
+}

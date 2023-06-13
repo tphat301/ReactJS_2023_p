@@ -1,7 +1,7 @@
-import ToggleButton from './components/ToggleButton/ToggleButton'
+import Card from './components/Card/Card'
 
 function App() {
-  return <ToggleButton></ToggleButton>
+  return <Card></Card>
 }
 
 export default App
