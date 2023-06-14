@@ -52,6 +52,7 @@ const StyledPriceOld = styled.del`
 
 const StyledPriceNew = styled.p`
   color: #f00;
+  /* color: ${(props) => props.theme.colors.green}; */
   font-size: ${(props) => props.fontSize || '18px'};
   font-weight: bold;
 `
@@ -106,7 +107,7 @@ const Card = () => {
         .fill(0)
         .map((item, index) => {
           return (
-            <StyledCardItem active={index === 0}>
+            <StyledCardItem active={index === 0} key={index}>
               <StyledCardPicture>
                 <StyledCardImg
                   src='https://images.unsplash.com/flagged/photo-1585052201332-b8c0ce30972f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJlc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
@@ -115,6 +116,7 @@ const Card = () => {
               </StyledCardPicture>
               <StyledCardInfo>
                 <StyledPriceNew>100.000VND</StyledPriceNew>
+                <div className='text-bluec'>ABC</div>
                 <StyledPriceOld>300.000VND</StyledPriceOld>
               </StyledCardInfo>
               <StyledBtnControl>
