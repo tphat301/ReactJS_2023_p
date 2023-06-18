@@ -1,9 +1,14 @@
 import Card from './components/Card/Card'
 import { GlobalStyles } from './GlobalStyles'
-import { ThemeProvider } from 'styled-components'
 import Photo from './components/Photo/Photo'
 import Content from './components/Content/Content'
 import { styled } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
+import Input from './components/Input/Input'
+import ClockTime from './components/ClockTime/ClockTime'
+import Blog from './components/Blog/Blog'
+import Login from './components/Login/Login'
+import Movies from './components/Movies/Movies'
 
 const StyledBackTop = styled.div`
   position: fixed;
@@ -35,10 +40,15 @@ function App() {
     //   </ThemeProvider>
     // </div>
     // <Photo></Photo>
-    <div>
-      <StyledBackTop>Back</StyledBackTop>
-      <Content></Content>
-    </div>
+    // <div>
+    //   <StyledBackTop>Back</StyledBackTop>
+    //   <Content></Content>
+    // </div>
+    // <Input></Input>
+    // <Blog></Blog>
+    // <Login></Login>
+    // <Movies></Movies>
+    <div></div>
   )
 }
 
