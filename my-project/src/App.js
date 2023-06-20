@@ -10,7 +10,7 @@ import Blog from './components/Blog/Blog'
 import Login from './components/Login/Login'
 import Movies from './components/Movies/Movies'
 import Sekeleton from './components/Sekeleton/Sekeleton'
-import FormikCom from './components/Formik/Formik'
+import From from './components/Form/From'
 
 const StyledBackTop = styled.div`
   position: fixed;
@@ -51,7 +51,7 @@ function App() {
     // <Login></Login>
     // <Movies></Movies>
     // <Sekeleton></Sekeleton>
-    <FormikCom></FormikCom>
+    <From></From>
   )
 }
 
