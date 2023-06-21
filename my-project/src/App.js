@@ -1,37 +1,39 @@
-import Card from './components/Card/Card'
-import { GlobalStyles } from './GlobalStyles'
-import Photo from './components/Photo/Photo'
-import Content from './components/Content/Content'
-import { styled } from 'styled-components'
-import { ThemeProvider } from 'styled-components'
-import Input from './components/Input/Input'
-import ClockTime from './components/ClockTime/ClockTime'
-import Blog from './components/Blog/Blog'
-import Login from './components/Login/Login'
-import Movies from './components/Movies/Movies'
-import Sekeleton from './components/Sekeleton/Sekeleton'
-import From from './components/Form/From'
+// import Card from './components/Card/Card'
+// import { GlobalStyles } from './GlobalStyles'
+// import Photo from './components/Photo/Photo'
+// import Content from './components/Content/Content'
+// import { styled } from 'styled-components'
+// import { ThemeProvider } from 'styled-components'
+// import Input from './components/Input/Input'
+// import ClockTime from './components/ClockTime/ClockTime'
+// import Blog from './components/Blog/Blog'
+// import Login from './components/Login/Login'
+// import Movies from './components/Movies/Movies'
+// import Sekeleton from './components/Sekeleton/Sekeleton'
+// import From from './components/Form/From'
+import Signup from './components/ExeSignup/Signup'
+// import Props from './components/Props/Props'
 
-const StyledBackTop = styled.div`
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  border-radius: 100%;
-  width: 50px;
-  height: 50px;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-color: #f00;
-`
+// const StyledBackTop = styled.div`
+//   position: fixed;
+//   right: 15px;
+//   bottom: 15px;
+//   border-radius: 100%;
+//   width: 50px;
+//   height: 50px;
+//   color: #fff;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   cursor: pointer;
+//   background-color: #f00;
+// `
 
-const theme = {
-  colors: {
-    green: 'green'
-  }
-}
+// const theme = {
+//   colors: {
+//     green: 'green'
+//   }
+// }
 
 function App() {
   return (
@@ -51,7 +53,10 @@ function App() {
     // <Login></Login>
     // <Movies></Movies>
     // <Sekeleton></Sekeleton>
-    <From></From>
+    // <From></From>
+    // <Props></Props>
+
+    <Signup></Signup>
   )
 }
 

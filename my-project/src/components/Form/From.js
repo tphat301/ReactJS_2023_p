@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useFormik } from 'formik'
+// import { useFormik } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yub from 'yup'
 
 const StyledFrom = styled.form`
@@ -36,7 +37,6 @@ const StyledBtnSubmit = styled.button`
   color: #fff;
   margin-top: 8px;
   border-radius: 10px;
-
   background-color: blueviolet;
 `
 
@@ -53,46 +53,74 @@ const StyledBtnSubmit = styled.button`
 // }
 
 const From = () => {
-  const formik = useFormik({
-    initialValues: {
-      username: ''
-    },
-    // validate,
-    validationSchema: yub.object({
-      username: yub
-        .string()
-        .max(20, 'Username nhập vào không được vượt quá 20 ký tự!')
-        .required('Username không được bỏ trống!')
-    }),
-    onSubmit: (values) => {
-      console.log(values)
-    }
-  })
+  // const formik = useFormik({
+  //   initialValues: {
+  //     username: ''
+  //   },
+  //   // validate,
+  // validationSchema: yub.object({
+  //   username: yub
+  //     .string()
+  //     .max(20, 'Username nhập vào không được vượt quá 20 ký tự!')
+  //     .required('Username không được bỏ trống!')
+  // }),
+  //   onSubmit: (values) => {
+  //     console.log(values)
+  //   }
+  // })
 
-  console.log(formik)
+  // console.log(formik)
   return (
-    <StyledFrom onSubmit={formik.handleSubmit} autoComplete='off'>
-      <div className='form-gr'>
-        <StyledUsernameTitle htmlFor='username'>Username: </StyledUsernameTitle>
-        <input
-          className='username'
-          name='username'
-          value={formik.values.username}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          placeholder='Enter your username...'
-        />
-        {formik.touched.username && formik.errors.username ? (
+    // <StyledFrom onSubmit={formik.handleSubmit} autoComplete='off'>
+    //   <div className='form-gr'>
+    //     <StyledUsernameTitle htmlFor='username'>Username: </StyledUsernameTitle>
+    //     <input
+    //       className='username'
+    //       name='username'
+    //       value={formik.values.username}
+    //       onChange={formik.handleChange}
+    //       onBlur={formik.handleBlur}
+    //       placeholder='Enter your username...'
+    //     />
+    //     {formik.touched.username && formik.errors.username ? (
+    //       <div className='error' style={{ color: '#f00' }}>
+    //         {formik.errors.username}
+    //       </div>
+    //     ) : null}
+    //   </div>
+    //   <StyledBtnSubmit type='submit' name='btn-submit'>
+    //     Submit
+    //   </StyledBtnSubmit>
+    // </StyledFrom>
+    // Có thể dùng {...formik.getFieldProp} trong input username để gộp onChage onBlur và onSubmit đồng thời lấy luôn fiel vào formik để handler
+
+    <Formik
+      initialValues={{
+        username: ''
+      }}
+      validationSchema={yub.object({
+        username: yub
+          .string()
+          .max(20, 'Username nhập vào không được vượt quá 20 ký tự!')
+          .required('Username không được bỏ trống!')
+      })}
+      onSubmit={(values) => {
+        return values
+      }}
+    >
+      <Form>
+        <div className='form-gr'>
+          <StyledUsernameTitle htmlFor='username'>Username: </StyledUsernameTitle>
+          <Field type='text' name='username' placeholder='Enter your username...' />
           <div className='error' style={{ color: '#f00' }}>
-            {formik.errors.username}
+            <ErrorMessage name='username'></ErrorMessage>
           </div>
-        ) : null}
-      </div>
-      <StyledBtnSubmit type='submit' name='btn-submit'>
-        Submit
-      </StyledBtnSubmit>
-    </StyledFrom>
-    // Có thể dùng {...formik.getFieldProp} để gộp onChage onBlur và onSubmit đồng thời lấy luôn fiel vào formik để handler
+        </div>
+        <StyledBtnSubmit type='submit' name='btn-submit'>
+          Submit
+        </StyledBtnSubmit>
+      </Form>
+    </Formik>
   )
 }
 
