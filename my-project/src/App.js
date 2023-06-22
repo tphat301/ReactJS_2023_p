@@ -12,6 +12,7 @@
 // import Sekeleton from './components/Sekeleton/Sekeleton'
 // import From from './components/Form/From'
 import Signup from './components/ExeSignup/Signup'
+import ReactHookFrom from './components/ReactHookForm/ReactHookFrom'
 // import Props from './components/Props/Props'
 
 // const StyledBackTop = styled.div`
@@ -56,7 +57,8 @@ function App() {
     // <From></From>
     // <Props></Props>
 
-    <Signup></Signup>
+    // <Signup></Signup>
+    <ReactHookFrom></ReactHookFrom>
   )
 }
 
