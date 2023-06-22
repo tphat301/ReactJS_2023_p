@@ -1,13 +1,21 @@
 import React from 'react'
 import app from './app.module.css'
 import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yub from 'yup'
 
+const validationSchema = Yub.object({
+  fullname: Yub.string()
+    .required('Họ và tên không được bỏ trống')
+    .max(15, 'Họ và tên chỉ được phép nhập tối đa 15 ký tự')
+})
+console.log(validationSchema)
 const ReactHookFrom = () => {
   const {
     register,
     handleSubmit,
     formState: { errors }
-  } = useForm()
+  } = useForm({ resolver: yupResolver(validationSchema) })
 
   // console.log(errors)
 
@@ -27,12 +35,13 @@ const ReactHookFrom = () => {
             })}
           />
         </div>
-        {errors.fullname && errors.fullname.type === 'required' && (
+        {/* {errors.fullname && errors.fullname.type === 'required' && (
           <div className={app.textDanger}>Họ và tên không được bỏ trống</div>
         )}
         {errors.fullname && errors.fullname.type === 'maxLength' && (
           <div className={app.textDanger}>Họ và tên chỉ được phép nhập tối đa 15 ký tự</div>
-        )}
+        )} */}
+        <div className={app.textDanger}>{errors.fullname?.message}</div>
         <div className='group-input'>
           <input
             type='text'
