@@ -9,17 +9,22 @@ const validationSchema = Yub.object({
     .required('Họ và tên không được bỏ trống')
     .max(15, 'Họ và tên chỉ được phép nhập tối đa 15 ký tự')
 })
-console.log(validationSchema)
 const ReactHookFrom = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
-  } = useForm({ resolver: yupResolver(validationSchema) })
-
-  // console.log(errors)
-
-  const onSubmit = (values) => console.log(values)
+    formState: { errors, isSubmitting, isValid, isDirty, isSubmitted },
+    reset
+  } = useForm({ resolver: yupResolver(validationSchema), mode: 'onChange' })
+  const onSubmit = async (values) => {
+    if (isValid) {
+      alert(`Data is send to backend`)
+      reset({
+        fullname: '',
+        address: ''
+      })
+    }
+  }
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)} autoComplete='off'>

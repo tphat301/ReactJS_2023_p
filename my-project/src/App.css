@@ -49,3 +49,31 @@
   color: rebeccapurple;
   cursor: pointer;
 }
+
+.btn-modal {
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 12px;
+  background-color: green;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 100px;
+  cursor: pointer;
+}
+
+.component1 {
+  padding: 8px 12px;
+  background-color: brown;
+  color: #fff;
+  border-radius: 12px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.component2 {
+  margin-top: 12px;
+}
