@@ -1,7 +1,6 @@
 import React, { Fragment, useReducer } from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
 
 /* Styled */
 const StyledModal = styled.div`
@@ -82,10 +81,6 @@ const Modal = ({ show = false, handleShowModal = () => {} }) => {
     </StyledModal>,
     document.querySelector('body')
   )
-}
-
-Modal.prototype = {
-  open:PropTypes.bool
 }
 
 export default Modal
